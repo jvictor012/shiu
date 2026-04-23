@@ -9,5 +9,14 @@
     <header>
         <a href="{{url_for('teste')}}">mic icon</a>
     </header>
+    <select class="filtro" onchange="carregar_produtos()">
+        <option value="0">Todos</option>
+        <option value="1">Utensílios de Cozinha</option>
+        <option value="2">Casa e Construção</option>
+        <option value="3">Tecnologia e Eletrônicos</option>
+        <option value="4">Esportes</option>
+    </select>
+    <div class="minha-lista"></div>
 </body>
+<script src="/static/script/home.js" defer></script>
 </html>
