@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shiu! - Veja o Som</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container flex-nav">
+            <div class="logo">shiu</div>
+            <nav class="menu">
+                <a href="/" class="active">Início</a>
+                <a href="/eletrodomesticos">Eletrodomésticos</a>
+                <a href="#">Medir com microfone</a>
+                <a href="#">Histórico</a>
+                <a href="#">Sobre</a>
+            </nav>
+            <button class="btn-nav">Começar agora</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>Veja o som.<br><span>Entenda o mundo.</span></h1>
+                <p>Medimos os níveis de som ao seu redor e mostramos de forma visual e simples.</p>
+                <div class="hero-btns">
+                    <button class="btn-primary" onclick="window.location.href='/eletrodomesticos'">Ver eletrodomésticos</button>
+                    <button class="btn-secondary">Medir com microfone</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='img/ilustracao-principal.png') }}" alt="Ilustração Principal">
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container features-grid">
+            <div class="feature-item">
+                <i class="fas fa-volume-up"></i>
+                <div>
+                    <h4>Informação clara</h4>
+                    <p>Veja o nível de som em decibéis (dB) de forma visual e fácil de entender.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                    <h4>Mais consciência</h4>
+                    <p>Entenda o impacto do som no seu dia a dia e na sua saúde auditiva.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-chart-bar"></i>
+                <div>
+                    <h4>Compare sons</h4>
+                    <p>Compare diferentes aparelhos e ambientes de maneira prática.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-bell"></i>
+                <div>
+                    <h4>Alertas visuais</h4>
+                    <p>Receba alertas quando o som estiver muito alto para sua segurança.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h3>Como funciona?</h3>
+            <div class="steps-wrapper">
+                <div class="step-card">
+                    <span class="num">1</span>
+                    <div class="inner-box">
+                        <i class="fas fa-plug"></i>
+                        <h5>Escolha ou meça</h5>
+                        <p>Escolha um eletrodoméstico na lista ou use o microfone.</p>
+                    </div>
+                </div>
+                <i class="fas fa-arrow-right"></i>
+                <div class="step-card">
+                    <span class="num">2</span>
+                    <div class="inner-box">
+                        <i class="fas fa-chart-line"></i>
+                        <h5>Veja o nível</h5>
+                        <p>Mostramos o nível de som em decibéis (dB) de forma visual.</p>
+                    </div>
+                </div>
+                <i class="fas fa-arrow-right"></i>
+                <div class="step-card">
+                    <span class="num">3</span>
+                    <div class="inner-box">
+                        <i class="fas fa-bell"></i>
+                        <h5>Receba o alerta</h5>
+                        <p>Se o som estiver muito alto, você recebe um aviso visual.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="health-banner">
+        <div class="container footer-flex">
+            <div class="title-group">
+                <i class="fas fa-ear-listen"></i>
+                <span>Cuide da sua saúde auditiva</span>
+            </div>
+            <p>Sons acima de 85 dB podem causar desconforto e prejudicar a audição. Use o shiu para medir e proteger.</p>
+            <img src="{{ url_for('static', filename='img/wave-line.png') }}" class="wave-img">
+        </div>
+    </footer>
+
+</body>
+</html>

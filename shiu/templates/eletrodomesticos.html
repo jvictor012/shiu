@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eletrodomésticos - Shiu!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container flex-nav">
+            <div class="logo">shiu</div>
+            <nav class="menu">
+                <a href="/">Início</a>
+                <a href="/eletrodomesticos" class="active">Eletrodomésticos</a>
+                <a href="#">Medir com microfone</a>
+                <a href="#">Histórico</a>
+                <a href="#">Sobre</a>
+            </nav>
+            <button class="btn-nav">Começar agora</button>
+        </div>
+    </header>
+
+    <main class="container page-content">
+        <div class="page-header">
+            <h1>Eletrodomésticos</h1>
+            <p>Compare os níveis de ruído de diferentes aparelhos comuns.</p>
+        </div>
+
+        <div class="grid-aparelhos">
+            {% for aparelho in aparelhos %}
+            <div class="card-aparelho">
+                <div class="img-box">
+                    <img src="{{ url_for('static', filename='img/' + aparelho.img) }}" alt="{{ aparelho.nome }}">
+                </div>
+                <div class="card-info">
+                    <h3>{{ aparelho.nome }}</h3>
+                    <div class="db-badge">{{ aparelho.db }} dB</div>
+                    <span class="status-tag {{ aparelho.status.lower().replace(' ', '-') }}">
+                        {{ aparelho.status }}
+                    </span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+</body>
+</html>
